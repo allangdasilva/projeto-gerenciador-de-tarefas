@@ -51,7 +51,7 @@ function Home(){
 
   return (
     <>
-      <div className='w-full min-h-screen flex flex-col items-center justify-center p-4 bg-red-300'>
+      <div className='w-full min-h-screen flex flex-col items-center justify-center p-4 bg-red-200'>
         <div className='w-full max-w-lg space-y-4'>
           <h1 className='text-3xl font-bold text-center text-white'>Gerenciador de Tarefas</h1>
           <AddTasks propAddTask={addTask} />

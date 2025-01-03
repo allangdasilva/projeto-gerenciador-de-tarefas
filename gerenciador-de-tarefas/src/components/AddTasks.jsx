@@ -6,7 +6,7 @@ function AddTaks(props){
 
     return (
         <>
-            <section className="flex flex-col space-y-4 p-4 bg-red-400 rounded-md">
+            <section className="flex flex-col space-y-4 p-4 rounded-md shadow-md bg-red-400">
                 <input 
                     type="text" placeholder="Insira o titulo da tarefa" className="px-4 py-2 rounded-md outline-red-500"
                     value={title}
