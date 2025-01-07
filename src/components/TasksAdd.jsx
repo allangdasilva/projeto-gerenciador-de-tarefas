@@ -27,6 +27,8 @@ function TasksAdd(props){
                         return alert('Preencha todos os campos!')
                     }
                     props.propAddTask(title, description)
+                    setTitle('')
+                    setDescription('')
                 }}
                 >Adicionar</button>
             </section>

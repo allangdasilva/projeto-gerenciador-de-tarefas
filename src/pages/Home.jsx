@@ -1,6 +1,7 @@
 import TasksAdd from '../components/TasksAdd'
 import Tasks from '../components/Tasks'
 import { useState } from 'react'
+import { v4 } from 'uuid'
 
 function Home(){
     const [tasks, setTasks] = useState([
@@ -26,12 +27,27 @@ function Home(){
 
     function addTask(title, description){
         const newTask = {
-            id: tasks.length + 1,
+            id: v4(),
             title: title,
             description: description,
             checker: false,
         }
         setTasks([...tasks, newTask])
+    }
+    
+    function deleteTasks(taskId){
+        const newTasks = tasks.filter(ele => ele.id !== taskId)
+        setTasks(newTasks)
+    }
+
+    function checkTask(taskId){
+        const newTask = tasks.map((ele)=>{
+            if(ele.id === taskId){
+                return {...ele, checker: !ele.checker}
+            }
+            return ele
+        })
+        setTasks(newTask)
     }
 
     return (
@@ -40,7 +56,7 @@ function Home(){
                 <div className='w-full max-w-lg flex flex-col items-center justify-center gap-4'>
                     <h1 className='text-3xl font-bold text-teal-900'>Gerenciador de Tarefas</h1>
                     <TasksAdd propAddTask={addTask} />
-                    <Tasks propTasks={tasks} />
+                    <Tasks propTasks={tasks} propDeleteTasks={deleteTasks} propCheckTask={checkTask} />
                 </div>
             </main>
         </>
