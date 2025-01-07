@@ -6,7 +6,7 @@ function TasksAdd(props){
 
     return (
         <>
-            <section className="w-full flex flex-col items-center gap-4 p-4 rounded-md shadow-md bg-teal-300">
+            <section className="w-full flex flex-col items-center gap-4 p-4 rounded-md shadow-md bg-teal-400">
                 <input 
                 type="text" 
                 placeholder="Título da tarefa" 
@@ -21,7 +21,7 @@ function TasksAdd(props){
                 onChange={(event)=> setDescription(event.target.value)}/>
                 
                 <button 
-                className="w-full p-2 rounded font-semibold text-white bg-teal-600"
+                className="transition w-full p-2 rounded font-semibold text-white bg-teal-700 hover:bg-teal-300 hover:text-teal-900"
                 onClick={()=> {
                     if(!title.trim() || !description.trim()){
                         return alert('Preencha todos os campos!')
