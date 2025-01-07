@@ -34,7 +34,7 @@ function Home(){
         }
         setTasks([...tasks, newTask])
     }
-    
+
     function deleteTasks(taskId){
         const newTasks = tasks.filter(ele => ele.id !== taskId)
         setTasks(newTasks)
@@ -52,7 +52,7 @@ function Home(){
 
     return (
         <>
-            <main className='w-full min-h-screen flex items-center justify-center bg-teal-50'>
+            <main className='w-full min-h-screen flex items-center justify-center p-2 bg-teal-50'>
                 <div className='w-full max-w-lg flex flex-col items-center justify-center gap-4'>
                     <h1 className='text-3xl font-bold text-teal-900'>Gerenciador de Tarefas</h1>
                     <TasksAdd propAddTask={addTask} />
